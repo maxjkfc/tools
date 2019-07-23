@@ -49,7 +49,7 @@ backup() {
 
 restore() {
 
-    CMD="restore"
+    CMD="mongorestore"
 
     if [ -z "$HOST" ]; then
         HOST="localhost:27017"
@@ -80,7 +80,7 @@ case $1  in
         ;;
     "restore")
         setconfig
-        backup
+        restore
         ;;
     *)
         echo "Please Input Action( backup / restore )"
